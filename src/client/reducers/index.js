@@ -1,6 +1,12 @@
 import { combineReducers } from "redux";
-import { admins } from "./AdminsReducer";
-import { users } from "./UsersReducer";
-import { currentUser } from "./AuthReducer";
+import { basics } from "./basicsReducer";
+import { formations } from "./formationsReducer";
+import { projects } from "./projectsReducer";
+import { skills } from "./skillsReducer";
 
-export const rootReducer = combineReducers({});
+export const rootReducer = combineReducers({
+  basics,
+  skills,
+  projects,
+  formations,
+});

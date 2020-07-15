@@ -33,7 +33,7 @@ export default (req, store) => {
     />
     <link rel="apple-touch-icon" href="logo192.png" />
     <link rel="manifest" href="manifest.json" />
-      <title>${req.path}</title>
+      <title>😁 Aatafay Mohamed Jawad 😁</title>
       ${styles}
     </head>
     <body style="margin:0">
@@ -41,7 +41,7 @@ export default (req, store) => {
       <script>
         window.INITIAL_STATE = ${serialize(store.getState())}
       </script>
-      <script src="bundle.js"></script>
+      <script src="bundle.js.gz"></script>
       </body>
   </html>
 `;

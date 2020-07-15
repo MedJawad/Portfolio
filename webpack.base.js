@@ -1,6 +1,7 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
+  mode: "development",
   plugins: [new CompressionPlugin()],
   //Tell webpack to run babel on every file it runs through
   module: {

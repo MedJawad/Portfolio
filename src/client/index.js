@@ -8,10 +8,11 @@ import { BrowserRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import Routes from "../Routes";
 
-const axiosInstance = Axios.create({
-  baseURL: "/api",
-});
-const store = createStore(window.INITIAL_STATE, axiosInstance);
+// const axiosInstance = Axios.create({
+//   baseURL: "/api",
+// });
+//WE won't need an axios on client side since all data will be provided by server rendered page in the store
+const store = createStore(window.INITIAL_STATE); //, axiosInstance);
 
 ReactDOM.hydrate(
   <React.StrictMode>
