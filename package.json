@@ -40,12 +40,10 @@
     "build": "npm-run-all --parallel build:*",
     "build:server": "webpack --config webpack.server.js",
     "build:client": "webpack --config webpack.client.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build:client",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec node build/bundle.js.gz ",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch"
-
   },
   "eslintConfig": {
     "extends": "react-app"
