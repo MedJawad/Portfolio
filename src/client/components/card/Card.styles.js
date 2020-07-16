@@ -16,6 +16,8 @@ export const CardContainer = styled.div`
 export const CardTitle = styled.span`
   font-size: 2em;
   padding: 0.5em;
+  display: block;
+  white-space: pre-line;
 `;
 export const CardDescription = styled.p``;
 
