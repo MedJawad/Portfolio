@@ -1,31 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   HeaderContainer,
   HeaderLinksBar,
   HeaderLink,
   BrandText,
-  ToggleThemeButton,
+  ThemedButton,
+  CollapsedHeader,
 } from "./Header.styles";
 import { ThemeContext } from "../../App";
 
 const Header = ({ toggleTheme }) => {
   const theme = useContext(ThemeContext);
-
+  const [isVisibleIfCollapsed, setIsVisibleIfCollapsed] = useState(false);
   return (
-    <HeaderContainer>
-      <HeaderLink to="/">
-        <BrandText>Mohamed Jawad</BrandText>
-      </HeaderLink>
-      <HeaderLinksBar>
-        <HeaderLink to="/about">About</HeaderLink>
-        <HeaderLink to="/skills">Skills</HeaderLink>
-        <HeaderLink to="/projects">Projects</HeaderLink>
-        <HeaderLink to="/contact">Contact</HeaderLink>
-        <ToggleThemeButton onClick={toggleTheme} theme={theme}>
-          {theme == "dark" ? "Light" : "Dark"}
-        </ToggleThemeButton>
-      </HeaderLinksBar>
-    </HeaderContainer>
+    <React.Fragment>
+      <CollapsedHeader>
+        <ThemedButton
+          onClick={() => setIsVisibleIfCollapsed(!isVisibleIfCollapsed)}
+        >
+          &#9776;
+        </ThemedButton>
+      </CollapsedHeader>
+      <HeaderContainer isVisibleIfCollapsed={isVisibleIfCollapsed}>
+        <HeaderLink to="/">
+          <BrandText>Mohamed Jawad</BrandText>
+        </HeaderLink>
+        <HeaderLinksBar>
+          <HeaderLink to="/about">About</HeaderLink>
+          <HeaderLink to="/skills">Skills</HeaderLink>
+          <HeaderLink to="/projects">Projects</HeaderLink>
+          <HeaderLink to="/contact">Contact</HeaderLink>
+          <ThemedButton onClick={toggleTheme} theme={theme}>
+            {theme == "dark" ? "Light" : "Dark"}
+          </ThemedButton>
+        </HeaderLinksBar>
+      </HeaderContainer>
+    </React.Fragment>
   );
 };
 

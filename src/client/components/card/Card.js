@@ -7,15 +7,14 @@ import {
 } from "./Card.styles";
 import { ThemeContext } from "../../App";
 
-const Card = ({ title, description }) => {
+const Card = ({ title, description, animationNumber }) => {
   const theme = useContext(ThemeContext);
   return (
-    <AnimatedCard>
+    <AnimatedCard animationNumber={animationNumber}>
       <CardContainer theme={theme}>
         <CardTitle>{title}</CardTitle>
         <CardDescription> {description} </CardDescription>
       </CardContainer>
-      <div></div>
     </AnimatedCard>
   );
 };

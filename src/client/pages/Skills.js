@@ -7,7 +7,12 @@ const skills = () => {
   const skills = useSelector((state) => state.skills.items);
   const renderSkills = () => {
     return skills.map((s, index) => (
-      <Card key={index} title={s.name} description={s.level} />
+      <Card
+        animationNumber={1}
+        key={index}
+        title={s.name}
+        description={s.level}
+      />
     ));
   };
 
