@@ -13,7 +13,7 @@ const config = {
   //Tell webpack where to put the output bundle file that is generated
   output: {
     filename: "bundle.js.gz",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
   },
   externals: [webpackNodeExternals()],
 };
