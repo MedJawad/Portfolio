@@ -25,7 +25,9 @@ const Header = ({ toggleTheme }) => {
         <HeaderLink to="/">
           <BrandText>Mohamed Jawad</BrandText>
         </HeaderLink>
-        <HeaderLinksBar>
+        <HeaderLinksBar
+          onClick={() => setIsVisibleIfCollapsed(!isVisibleIfCollapsed)}
+        >
           <HeaderLink to="/about">About</HeaderLink>
           <HeaderLink to="/skills">Skills</HeaderLink>
           <HeaderLink to="/projects">Projects</HeaderLink>

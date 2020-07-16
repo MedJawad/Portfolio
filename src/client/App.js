@@ -12,7 +12,7 @@ const App = ({ route }) => {
   const [theme, setTheme] = useState("dark");
 
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <ThemeContext.Provider value={theme}>
         <Header
           toggleTheme={() => setTheme(theme == "dark" ? "light" : "dark")}

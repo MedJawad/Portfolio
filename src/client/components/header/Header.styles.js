@@ -5,7 +5,6 @@ export const CollapsedHeader = styled.div`
   position: absolute;
   top: 5px;
   right: 5px;
-
   font-size: larger;
   font-weight: bolder;
 
