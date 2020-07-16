@@ -22,7 +22,7 @@ server.get("*", (req, res) => {
     res.send(Html(req, store));
   });
 });
-
-server.listen(3000, () => {
-  console.log("Listening on port 3000...");
+var port = Number(process.env.PORT || 3000);
+server.listen(port, () => {
+  console.log("Listening on port " + port + " ...");
 });
