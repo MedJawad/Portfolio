@@ -23,9 +23,9 @@ export const CardDescription = styled.p``;
 
 const animationOne = keyframes`
 0% {transform: rotate(10deg);left:300px;}
-33% {transform: rotate(-10deg);left:-300px;}
-66% {transform: rotate(10deg);left:150px;}
-85% {transform: rotate(-10deg);left:-50px;}
+36% {transform: rotate(-10deg);left:-300px;}
+60% {transform: rotate(5deg);left:150px;}
+85% {transform: rotate(-2deg);left:-50px;}
 100% {transform: rotate(0deg);left:0px;}
 `;
 const fadeIn = keyframes`
@@ -35,8 +35,10 @@ const fadeIn = keyframes`
 
 export const AnimatedCard = styled.div`
   position: relative;
-  animation: ${(props) =>
-    (props.animationNumber === 0 && css`5s ${fadeIn} ease 1`) ||
-    (props.animationNumber === 1 && css`13s ${animationOne} ease 1`) ||
-    "unset"};
+  @media (min-width: 800px) {
+    animation: ${(props) =>
+      (props.animationNumber === 0 && css`5s ${fadeIn} ease 1`) ||
+      (props.animationNumber === 1 && css`10s ${animationOne} ease 1`) ||
+      "unset"};
+  }
 `;

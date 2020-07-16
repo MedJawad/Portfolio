@@ -18,9 +18,11 @@ server.get("*", (req, res) => {
     return route.loadData ? route.loadData(store) : null;
   });
 
-  Promise.all(promises).then(() => {
-    res.send(Html(req, store));
-  });
+  Promise.all(promises)
+    .then(() => {
+      res.send(Html(req, store));
+    })
+    .catch((err) => res.status(500).send(Html(req, store)));
 });
 var port = Number(process.env.PORT || 3000);
 server.listen(port, () => {

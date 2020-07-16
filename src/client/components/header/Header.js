@@ -6,8 +6,10 @@ import {
   BrandText,
   ThemedButton,
   CollapsedHeader,
+  HeaderImage,
 } from "./Header.styles";
 import { ThemeContext } from "../../App";
+import icon from "./icon.png";
 
 const Header = ({ toggleTheme }) => {
   const theme = useContext(ThemeContext);
@@ -21,17 +23,19 @@ const Header = ({ toggleTheme }) => {
           &#9776;
         </ThemedButton>
       </CollapsedHeader>
-      <HeaderContainer isVisibleIfCollapsed={isVisibleIfCollapsed}>
+      <HeaderContainer
+        isVisibleIfCollapsed={isVisibleIfCollapsed}
+        onClick={() => setIsVisibleIfCollapsed(!isVisibleIfCollapsed)}
+      >
         <HeaderLink to="/">
-          <BrandText>Mohamed Jawad</BrandText>
+          <BrandText>
+            <HeaderImage image={icon} /> <span>Mohamed Jawad</span>
+          </BrandText>
         </HeaderLink>
-        <HeaderLinksBar
-          onClick={() => setIsVisibleIfCollapsed(!isVisibleIfCollapsed)}
-        >
+        <HeaderLinksBar>
           <HeaderLink to="/about">About</HeaderLink>
           <HeaderLink to="/skills">Skills</HeaderLink>
           <HeaderLink to="/projects">Projects</HeaderLink>
-          <HeaderLink to="/contact">Contact</HeaderLink>
           <ThemedButton onClick={toggleTheme} theme={theme}>
             {theme == "dark" ? "Light" : "Dark"}
           </ThemedButton>

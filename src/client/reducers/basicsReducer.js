@@ -2,7 +2,7 @@ const initialState = {
   isLoading: false,
   name: "Aatafay Mohamed Jawad",
   picture: "",
-  label: "",
+  label: "FullStack Engineering Student",
   headline: "",
   summary: "",
   website: null,

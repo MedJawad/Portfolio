@@ -6,7 +6,6 @@ import {
   FooterLinksBar,
   FooterLink,
 } from "./Footer.styles";
-import fbLogo from "./fb.png";
 const Footer = () => {
   const theme = useContext(ThemeContext);
 

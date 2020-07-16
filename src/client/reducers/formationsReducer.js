@@ -1,6 +1,7 @@
 const initialState = {
   isLoading: false,
-  items: [],
+  education: [],
+  work: [],
 };
 
 export const formations = (state = initialState, action) => {
@@ -12,7 +13,8 @@ export const formations = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        items: [...action.data.education, ...action.data.work],
+        education: [...action.data.education],
+        work: [...action.data.work],
       };
     case "FAILURE":
       return { ...state, isLoading: false };

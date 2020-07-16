@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const CollapsedHeader = styled.div`
@@ -33,7 +33,9 @@ export const HeaderContainer = styled.div`
 export const BrandText = styled.span`
   color: white;
   font-size: 2em;
-  padding: 0.5em;
+  padding: 0em 0.5em;
+  display: flex;
+  flex-direction: row-gap;
   &:hover {
     color: #259eb5;
   }
@@ -55,7 +57,7 @@ export const HeaderLinksBar = styled.div`
 export const HeaderLink = styled(Link)`
   color: white;
   margin-left: 7px;
-  padding: 1em;
+  padding: 0.5em 1em;
   font-size: 1.3em;
   text-decoration: none;
   &:hover {
@@ -66,7 +68,7 @@ export const ThemedButton = styled.button`
   color: ${(props) => (props.theme == "dark" ? "black" : "white")};
   background-color: ${(props) => (props.theme == "dark" ? "white" : "black")};
   margin-left: 7px;
-  padding: 1em;
+  padding: 0.5em 1em;
   text-decoration: none;
   border-radius: 20px;
   box-shadow: 0px;
@@ -79,4 +81,14 @@ export const ThemedButton = styled.button`
   &:focus {
     outline: 0 !important;
   }
+`;
+export const HeaderImage = styled.div`
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  border-radius: 50px;
+  background: ${(props) => (props.image ? css`url(${props.image})` : "unset")};
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
