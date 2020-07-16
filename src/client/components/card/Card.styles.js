@@ -3,8 +3,8 @@ import { keyframes } from "styled-components";
 
 export const CardContainer = styled.div`
   margin: 20px auto;
-  width: 40%;
-  padding: 1rem;
+  width: 50%;
+  padding: 1em;
   background-color: ${(props) => (props.theme == "dark" ? "#3a3a3a" : "white")};
   color: ${(props) => (props.theme == "dark" ? "white" : "black")};
   box-shadow: 2px 2px 20px #aaaaaa;
