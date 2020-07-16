@@ -34,9 +34,7 @@
     "webpack-node-externals": "^2.5.0"
   },
   "scripts": {
-    "client-install": "npm install",
     "start": "node build/bundle.js.gz ",
-    "server": "nodemon build/bundle.js.gz ",
     "build": "npm-run-all --parallel build:*",
     "build:server": "webpack --config webpack.server.js",
     "build:client": "webpack --config webpack.client.js",
