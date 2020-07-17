@@ -18,7 +18,10 @@ const Header = ({ toggleTheme }) => {
     <React.Fragment>
       <CollapsedHeader>
         <ThemedButton
-          onClick={() => setIsVisibleIfCollapsed(!isVisibleIfCollapsed)}
+          onClick={() => {
+            setIsVisibleIfCollapsed(!isVisibleIfCollapsed);
+            window.scrollTo(0, 0);
+          }}
         >
           &#9776;
         </ThemedButton>

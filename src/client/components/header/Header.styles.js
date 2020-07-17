@@ -2,12 +2,14 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const CollapsedHeader = styled.div`
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  height: 20px;
+  width: 20px;
   font-size: larger;
   font-weight: bolder;
-
+  z-index: 100;
   @media (min-width: 800px) {
     display: none;
   }
@@ -79,12 +81,15 @@ export const ThemedButton = styled.button`
   box-shadow: 0px;
   border: none;
   cursor: pointer;
-  &:hover {
-    color: ${(props) => (props.theme == "dark" ? "white" : "black")};
-    background-color: ${(props) => (props.theme == "dark" ? "black" : "white")};
-  }
   &:focus {
     outline: 0 !important;
+  }
+  @media (min-width: 800px) {
+    &:hover {
+      color: ${(props) => (props.theme == "dark" ? "white" : "black")};
+      background-color: ${(props) =>
+        props.theme == "dark" ? "black" : "white"};
+    }
   }
 `;
 export const HeaderImage = styled.div`
