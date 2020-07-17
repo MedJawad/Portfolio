@@ -17,11 +17,9 @@ export const BrandText = styled.span`
   }
 `;
 export const FooterLinksBar = styled.div`
-  /* padding: 1em 1em; */
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
   margin-left: auto;
 `;
 export const FooterLink = styled.span`
@@ -34,9 +32,11 @@ export const FooterLink = styled.span`
   width: 30px;
   height: 30px;
   margin: 20px;
-  /* padding: 13px 20px; */
   text-decoration: none;
   &:hover {
     color: #259eb5;
+  }
+  @media (max-width: 800px) {
+    margin: 5px;
   }
 `;

@@ -10,4 +10,9 @@ export const ImageContainer = styled.div`
   background: ${(props) => (props.image ? css`url(${props.image})` : "unset")};
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 800px) {
+    width: 150px;
+    height: 150px;
+    box-shadow: 10px 10px 70px #509ffa;
+  }
 `;

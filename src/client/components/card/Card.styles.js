@@ -3,7 +3,7 @@ import { keyframes } from "styled-components";
 
 export const CardContainer = styled.div`
   margin: 20px auto;
-  width: 50%;
+  width: 60%;
   padding: 1em;
   background-color: ${(props) => (props.theme == "dark" ? "#3a3a3a" : "white")};
   color: ${(props) => (props.theme == "dark" ? "white" : "black")};
@@ -11,6 +11,10 @@ export const CardContainer = styled.div`
   text-align: center;
   &:hover {
     transform: scale(1.2);
+  }
+  @media (max-width: 800px) {
+    width: 80%;
+    padding: 0.5em;
   }
 `;
 export const CardTitle = styled.span`

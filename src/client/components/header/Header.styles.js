@@ -28,6 +28,7 @@ export const HeaderContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0em;
   }
 `;
 export const BrandText = styled.span`
@@ -35,13 +36,16 @@ export const BrandText = styled.span`
   font-size: 2em;
   padding: 0em 0.5em;
   display: flex;
-  flex-direction: row-gap;
+  flex-direction: row;
   &:hover {
     color: #259eb5;
   }
+  @media (max-width: 800px) {
+    justify-content: space-between;
+    padding: 10% 0;
+  }
 `;
 export const HeaderLinksBar = styled.div`
-  /* padding: 1em 1em; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,9 +53,7 @@ export const HeaderLinksBar = styled.div`
   margin-left: auto;
   @media (max-width: 800px) {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    margin: 0 auto;
   }
 `;
 export const HeaderLink = styled(Link)`
@@ -62,6 +64,9 @@ export const HeaderLink = styled(Link)`
   text-decoration: none;
   &:hover {
     color: #259eb5;
+  }
+  @media (max-width: 800px) {
+    margin: 10px auto;
   }
 `;
 export const ThemedButton = styled.button`
@@ -87,7 +92,6 @@ export const HeaderImage = styled.div`
   height: 50px;
   margin: auto;
   text-align: center;
-  border-radius: 50px;
   background: ${(props) => (props.image ? css`url(${props.image})` : "unset")};
   background-repeat: no-repeat;
   background-size: cover;
